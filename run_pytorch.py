@@ -3,11 +3,14 @@ import sys
 
 import numpy as np
 import torch
+import tiledb
 
 import cellxgene_census
 from cellxgene_census.experimental.ml import experiment_dataloader, ExperimentDataPipe
 from cellxgene_census.experimental.ml.pytorch import pytorch_logger
 from cellxgene_census.experimental.util._eager_iter import util_logger
+
+from io import StringIO
 
 RANDOM_SEED = 123
 np.random.seed(RANDOM_SEED)
@@ -20,6 +23,9 @@ if __name__ == "__main__":
     util_logger.setLevel(logging.DEBUG)
 
     import tiledbsoma as soma
+
+    tiledb.stats_enable()
+    tiledb.stats_reset()
 
     (
         census_uri_arg,
@@ -65,3 +71,7 @@ if __name__ == "__main__":
     print(f"Received {rows} rows in {i} torch batches, {exp_datapipe.stats()}:\n{datum}")
     print(f"ids n={len(ids)}, n_uniq={len(set(ids))}, min={min(ids)}, max={max(ids)}")
 
+    import json
+    with open("tiledb_stats.json", "w") as f:
+        json.dump(tiledb.stats_dump(json=True), f)
+    
