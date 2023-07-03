@@ -50,7 +50,7 @@ if __name__ == "__main__":
         obs_column_names=column_names_arg.split(","),
         batch_size=int(torch_batch_size_arg),
         sparse_X=sparse_X_arg.lower() == "sparse",
-        soma_buffer_bytes=2 ** 16,
+        #soma_buffer_bytes=2 ** 16,
         use_eager_fetch=True
     )
 
