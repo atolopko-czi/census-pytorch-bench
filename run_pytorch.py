@@ -46,7 +46,7 @@ if __name__ == "__main__":
         measurement_name=measurement_name_arg,
         X_name=layer_name_arg,
         obs_query=soma.AxisQuery(value_filter=(obs_value_filter_arg or None)),
-        var_query=soma.AxisQuery(coords=(slice(1, 9),)),
+        var_query=soma.AxisQuery(), #coords=(slice(1, 9),)),
         obs_column_names=column_names_arg.split(","),
         batch_size=int(torch_batch_size_arg),
         sparse_X=sparse_X_arg.lower() == "sparse",
