@@ -2,6 +2,10 @@ set -e
 
 export PYTHONPATH=~/TileDB-SOMA
 
+rm -rf profiling_db
+
+pip list > pip_packages.txt
+
 # quick test
 python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='tongue' --obs-columns soma_joinid"
 
