@@ -79,9 +79,11 @@ def run_pytorch(census_uri,
     print(f"Received {rows} rows in {i} torch batches, {exp_datapipe.stats()}:\n{datum}")
     print(f"ids n={len(ids)}, n_uniq={len(set(ids))}, min={min(ids)}, max={max(ids)}")
 
+    tiledb_stats = tiledb.stats_dump(version=False, print_out=False, verbose=True)
+    
     import json
     with open("tiledb_stats.json", "w") as f:
-        json.dump(tiledb.stats_dump(json=True, verbose=True), f)
+        json.dump(json.loads(tiledb_stats), f)
 
 
 if __name__ == '__main__':
