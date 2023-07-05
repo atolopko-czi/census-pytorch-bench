@@ -81,7 +81,7 @@ def run_pytorch(census_uri,
 
     import json
     with open("tiledb_stats.json", "w") as f:
-        json.dump(tiledb.stats_dump(json=True), f)
+        json.dump(tiledb.stats_dump(json=True, verbose=True), f)
 
 
 if __name__ == '__main__':
