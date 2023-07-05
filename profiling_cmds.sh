@@ -21,7 +21,7 @@ python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scr
 python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024 --soma-buffer-bytes 536870912"
 
 # sparse
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024 --dense-x"
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024 --sparse-x"
 
 # tissues (size)
 python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='lung' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024"
