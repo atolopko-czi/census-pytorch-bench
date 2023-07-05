@@ -16,22 +16,30 @@ python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scr
 python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024"
 
 # soma batch size
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024 --soma-buffer-bytes 134217728"
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024 --soma-buffer-bytes 268435456"
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024 --soma-buffer-bytes 536870912"
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --soma-buffer-bytes 134217728"
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --soma-buffer-bytes 268435456"
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --soma-buffer-bytes 536870912"
 
 # sparse
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024 --sparse-x"
-
-# tissues (size)
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='lung' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024"
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='blood' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024"
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='brain' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024"
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --sparse-x"
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='lung' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --sparse-x"
 
 # multiprocessing (worker count)
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024 --num-workers 2"
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024 --num-workers 4"
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024 --num-workers 8"
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --num-workers 2"
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --num-workers 4"
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --num-workers 8"
 
 # lazy fetch
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='lung' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --torch-batch-size 1024 --use-lazy-fetch"
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='lung' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --use-lazy-fetch"
+
+# tissues (size)
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='lung' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id"
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='blood' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id"
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='brain' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id"
+
+# cell_types (size)
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter cell_type=='neuron' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id"
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter cell_type=='B cell' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id"
+
+# full corpus (primary cells)
+python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter is_primary_data==True --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id"
