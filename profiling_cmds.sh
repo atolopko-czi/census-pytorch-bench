@@ -37,9 +37,9 @@ python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scr
 python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='blood' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id"
 python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='brain' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id"
 
-# cell_types (size)
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter cell_type=='neuron' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id"
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter cell_type=='B cell' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id"
+# # cell_types (size)
+# python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter cell_type=='neuron' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id"
+# python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter cell_type=='macrophage' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id"
 
-# full corpus (primary cells)
-python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter is_primary_data==True --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id"
+# # full corpus (primary cells)
+# python -m profiler -t /usr/bin/time "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter is_primary_data==True --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id"
