@@ -1,0 +1,1 @@
+python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='heart' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --num-workers 8
