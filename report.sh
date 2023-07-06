@@ -1,1 +1,1 @@
-find profiling_db -name '*json' -exec cat {} \; | jq -s '[.[] | { command, timestamp, exit_status, elapsed_time_sec, max_res_set_sz_kb }] | sort_by(.timestamp)' |less
+find profiling_db -name '*json' -exec cat {} \; | jq -s '[.[] | { command, command_key, timestamp, exit_status, elapsed_time_sec, user_time_sec, system_time_sec, pct_of_cpu, max_res_set_sz_kb, major_page_faults }] | sort_by(.timestamp)' |less
