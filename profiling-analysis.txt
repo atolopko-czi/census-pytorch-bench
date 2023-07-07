@@ -9,7 +9,8 @@ Swap on SSD
   Lung: 5976308 cells (9717102940 X values) in 1644s: 3635 cells/sec
 
   Heart, with no swapping, provides the high-end throughput potential. Lung
-  with swapping observed, is 3x slower.
+  with swapping observed, is 3x slower. With no swapping, iterating all Census 
+  primary cells (~40M) should take ~1hr.
 
   Requires further investigation, since memory requirement should *not*
   increase for larger cell counts (due to streaming).
