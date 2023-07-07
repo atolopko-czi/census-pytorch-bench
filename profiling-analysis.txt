@@ -25,8 +25,8 @@ Swap on SSD
   No apparent impact on run time with varying SOMA buffer bytes values. Should
   re-run with smaller values to see at what point an impact is observable.
 
-- Sparse X tensors: sparse (148s) vs dense (262s) for lung; sparse (1623s) vs
-  dense (1644)
+- Sparse X tensors: sparse (148s) vs dense (262s) for heart; sparse (1623s) vs
+  dense (1644) for lung
 
 - Multiprocessing: 0 (262s), 2 (431s), 4 (284s), 8 (245s)
 
