@@ -3,9 +3,21 @@ c6id.16xlarge
 Local mirror of Census on SSD
 Swap on SSD
 
+- Throughput estimate
+
+  Heart: 3100142 cells (4344062228 X values) in 262s:  11832 cells/sec
+  Lung: 5976308 cells (9717102940 X values) in 1644s: 3635 cells/sec
+
+  Heart, with no swapping, provides the high-end throughput potential. Lung
+  with swapping observed, is 3x slower.
+
+  Requires further investigation, since memory requirement should *not*
+  increase for larger cell counts (due to streaming).
+
 - PyTorch batch size: 128 (262s), 256 (257s), and 512 (244s), 1024 (473s)
 
-  Modestly faster as bath size increases, until 1024, which is much slower
+  Modestly faster as bath size increases, until 1024, which is much
+  slower. Should investigate the drop-off in performance for larger batch sizes.
 
 - SOMA buffer bytes: 134217728 (265s), 268435456 (267s), 536870912 (263s)
 
@@ -28,13 +40,11 @@ Swap on SSD
 
 - Tissue sizes
 
-  blood:  9429391 cells ( 2555s,  22788989 major page faults)
+  lung:   5976308 cells  (1644s,   8318306 major page faults)
+  blood:  9429391 cells  (2555s,  22788989 major page faults)
   brain: 18548003 cells (15078s, 266099204 major page faults)
 
-  Doubling cell count, 6x slower, with 12x more page faults.
+  Slower performance for larger data sizes, due to more page faults.
 
   Requires further investigation, since memory requirement should *not*
-  increase for larger cell counts (it means streaming).
-
-
-
+  increase for larger cell counts (due to streaming).
