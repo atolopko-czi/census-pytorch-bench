@@ -1,0 +1,40 @@
+c6id.16xlarge
+64 vCPU, 128 Gib RAM, 2x1900 NVMe SSD
+Local mirror of Census on SSD
+Swap on SSD
+
+- PyTorch batch size: 128 (262s), 256 (257s), and 512 (244s), 1024 (473s)
+
+  Modestly faster as bath size increases, until 1024, which is much slower
+
+- SOMA buffer bytes: 134217728 (265s), 268435456 (267s), 536870912 (263s)
+
+  No apparent impact on run time with varying SOMA buffer bytes values. Should
+  re-run with smaller values to see at what point an impact is observable.
+
+- Sparse X tensors: sparse (148s) vs dense (262s) for lung; sparse (1623s) vs
+  dense (1644)
+
+- Multiprocessing: 0 (262s), 2 (431s), 4 (284s), 8 (245s)
+
+  Initially, slower for 2 and 4, with decreasing returns for 8, which finally
+  outperforms single process. Multiprocessing does not provide a benefit.
+
+- Eager fetch: eager (1644s) vs lazy fetch (2010s).
+
+  Inconclusive since it ran on 'lung' tissue, which was fully retrieved in a
+  single SOMA batch; need to re-run on query result that requires multiple
+  SOMA batches
+
+- Tissue sizes
+
+  blood:  9429391 cells ( 2555s,  22788989 major page faults)
+  brain: 18548003 cells (15078s, 266099204 major page faults)
+
+  Doubling cell count, 6x slower, with 12x more page faults.
+
+  Requires further investigation, since memory requirement should *not*
+  increase for larger cell counts (it means streaming).
+
+
+
