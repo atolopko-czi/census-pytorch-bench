@@ -77,8 +77,10 @@ def run_pytorch(census_uri,
         # if (i + 1) % 1000 == 0:
         #     print(f"Received {rows} rows in {i} torch batches, {exp_datapipe.stats()}:\n{datum}")
     print(f"Received {rows} rows in {i} torch batches, {exp_datapipe.stats()}:\n{datum}")
-    print(f"ids n={len(ids)}, n_uniq={len(set(ids))}, min={min(ids)}, max={max(ids)}")
+    if len(ids) > 0:
+        print(f"ids n={len(ids)}, n_uniq={len(set(ids))}, min={min(ids)}, max={max(ids)}")
 
+    tiledb.stats_disable()
     tiledb_stats = tiledb.stats_dump(version=False, print_out=False, verbose=True)
     
     import json
