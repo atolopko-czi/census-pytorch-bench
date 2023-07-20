@@ -9,6 +9,7 @@ import torch
 from cellxgene_census.experimental.ml import experiment_dataloader, ExperimentDataPipe
 from cellxgene_census.experimental.ml.pytorch import pytorch_logger
 from cellxgene_census.experimental.util._eager_iter import util_logger
+import os
 
 RANDOM_SEED = 123
 np.random.seed(RANDOM_SEED)
@@ -26,7 +27,9 @@ torch.manual_seed(RANDOM_SEED)
 @click.option("--torch-batch-size", default=128)
 @click.option("--num-workers", default=0)
 @click.option("--soma-buffer-bytes", type=int)
-@click.option("--use-eager-fetch/--use-lazy-fetch", default=True)
+@click.option("--use-eager-fetch/--use-lazy-fetch", default=True, show_default=True)
+@click.option("--pytorch-debug-gc", is_flag=True)
+@click.option("--pytorch-debug-empty-tensors", is_flag=True)
 @click.command()
 def run_pytorch(census_uri,
                 organism,
@@ -39,10 +42,20 @@ def run_pytorch(census_uri,
                 torch_batch_size,
                 num_workers,
                 soma_buffer_bytes,
-                use_eager_fetch
+                use_eager_fetch,
+                pytorch_debug_gc,
+                pytorch_debug_empty_tensors,
                 ) -> None:
     pytorch_logger.setLevel(logging.DEBUG)
     util_logger.setLevel(logging.DEBUG)
+
+    if pytorch_debug_gc:
+        print('setting PYTORCH_DEBUG_GC')
+        os.environ['PYTORCH_DEBUG_GC'] = 'True'
+
+    if pytorch_debug_empty_tensors:
+        print('setting PYTORCH_DEBUG_EMPTY_TENSORS')
+        os.environ['PYTORCH_DEBUG_EMPTY_TENSORS'] = 'True'
 
     tiledb.stats_enable()
     tiledb.stats_reset()
@@ -57,7 +70,7 @@ def run_pytorch(census_uri,
         var_query=soma.AxisQuery(coords=(slice(0, num_genes),)) if num_genes else soma.AxisQuery(),
         obs_column_names=obs_columns.split(","),
         batch_size=int(torch_batch_size),
-        sparse_X=sparse_x,
+        return_sparse_X=sparse_x,
         soma_buffer_bytes=soma_buffer_bytes,
         use_eager_fetch=use_eager_fetch
     )
