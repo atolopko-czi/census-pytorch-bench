@@ -9,7 +9,8 @@ Swap on SSD
   Lung: 5976308 cells (9717102940 X values) in 1644s: 3635 cells/sec
 
   Heart, with no swapping, provides the high-end throughput potential. Lung
-  with swapping observed, is 3x slower.
+  with swapping observed, is 3x slower. With no swapping, iterating all Census 
+  primary cells (~40M) should take ~1hr.
 
   Requires further investigation, since memory requirement should *not*
   increase for larger cell counts (due to streaming).
@@ -24,8 +25,8 @@ Swap on SSD
   No apparent impact on run time with varying SOMA buffer bytes values. Should
   re-run with smaller values to see at what point an impact is observable.
 
-- Sparse X tensors: sparse (148s) vs dense (262s) for lung; sparse (1623s) vs
-  dense (1644)
+- Sparse X tensors: sparse (148s) vs dense (262s) for heart; sparse (1623s) vs
+  dense (1644) for lung
 
 - Multiprocessing: 0 (262s), 2 (431s), 4 (284s), 8 (245s)
 
