@@ -1,0 +1,133 @@
+{
+  "command": "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='brain' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --soma-buffer-bytes 16777216 --use-lazy-fetch --pytorch-debug-gc",
+  "timestamp": 1689871001.631522,
+  "stdout": "",
+  "stderr": "Initializing ExperimentDataPipe\nInitializing encoders\ngc:  pre=(pfullmem(rss=1047687168, vms=18195070976, shared=284971008, text=2830336, lib=0, data=9273716736, dirty=0, uss=805527552, pss=928266240, swap=0), svmem(total=66343776256, available=64128737280, percent=3.3, used=1463238656, free=64034414592, active=80338944, inactive=1586282496, buffers=16334848, cached=829788160, shared=983040, slab=413097984), sswap(total=0, used=0, free=0, percent=0.0, sin=0, sout=0))\ngc: post=(pfullmem(rss=1047687168, vms=18195070976, shared=284971008, text=2830336, lib=0, data=9273716736, dirty=0, uss=805539840, pss=928278528, swap=0), svmem(total=66343776256, available=64128737280, percent=3.3, used=1463238656, free=64034414592, active=80338944, inactive=1586294784, buffers=16334848, cached=829788160, shared=983040, slab=413097984), sswap(total=0, used=0, free=0, percent=0.0, sin=0, sout=0))\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=466033, nnz=2137542522, elapsed=0:00:32\nRetrieved SOMA batch totals: n_soma_batches=1, n_obs=466033, nnz=2137542522, elapsed=0:00:32\ngc:  pre=(pfullmem(rss=21523963904, vms=56365228032, shared=292106240, text=2830336, lib=0, data=41536823296, dirty=0, uss=21281906688, pss=21404657664, swap=0), svmem(total=66343776256, available=43094376448, percent=35.0, used=22497509376, free=39638487040, active=133902336, inactive=25852407808, buffers=16515072, cached=4191264768, shared=983040, slab=414445568), sswap(total=0, used=0, free=0, percent=0.0, sin=0, sout=0))\ngc: post=(pfullmem(rss=21523963904, vms=56365228032, shared=292106240, text=2830336, lib=0, data=41536823296, dirty=0, uss=21281910784, pss=21404661760, swap=0), svmem(total=66343776256, available=43094376448, percent=35.0, used=22497509376, free=39638487040, active=133902336, inactive=25852407808, buffers=16515072, cached=4191264768, shared=983040, slab=414445568), sswap(total=0, used=0, free=0, percent=0.0, sin=0, sout=0))\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=466033, nnz=2449482347, elapsed=0:00:43\nRetrieved SOMA batch totals: n_soma_batches=2, n_obs=932066, nnz=4587024869, elapsed=0:01:15\ngc:  pre=(pfullmem(rss=17704783872, vms=81418878976, shared=284639232, text=2830336, lib=0, data=63614889984, dirty=0, uss=17469378560, pss=17588637696, swap=0), svmem(total=66343776256, available=47035596800, percent=29.1, used=18556375040, free=45911334912, active=521064448, inactive=19199631360, buffers=16506880, cached=1859559424, shared=983040, slab=415150080), sswap(total=0, used=0, free=0, percent=0.0, sin=0, sout=0))\ngc: post=(pfullmem(rss=17704783872, vms=81418878976, shared=284639232, text=2830336, lib=0, data=63614889984, dirty=0, uss=17469399040, pss=17588658176, swap=0), svmem(total=66343776256, available=47035596800, percent=29.1, used=18556375040, free=45911334912, active=521064448, inactive=19199631360, buffers=16506880, cached=1859559424, shared=983040, slab=415150080), sswap(total=0, used=0, free=0, percent=0.0, sin=0, sout=0))\nRetrieving next SOMA batch...\nCommand terminated by signal 9\nCommand being timed: \"python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='brain' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --soma-buffer-bytes 16777216 --use-lazy-fetch --pytorch-debug-gc\"\nUser time (seconds): 600.72\nSystem time (seconds): 141.39\nPercent of CPU this job got: 303%\nElapsed (wall clock) time (seconds): 244.85\nAverage shared text size (kbytes): 0\nAverage unshared data size (kbytes): 0\nAverage stack size (kbytes): 0\nAverage total size (kbytes): 0\nMaximum resident set size (kbytes): 63338564\nAverage resident set size (kbytes): 0\nMajor (requiring I/O) page faults: 908\nMinor (reclaiming a frame) page faults: 23975813\nVoluntary context switches: 3717443\nInvoluntary context switches: 6247\nSwaps: 0\nFile system inputs: 21012240\nFile system outputs: 0\nSocket messages sent: 0\nSocket messages received: 0\nSignals delivered: 0\nPage size (bytes): 4096\nExit status: 0\n",
+  "tiledb_stats": [
+    {
+      "timers": {
+        "Context.StorageManager.sm_load_group_metadata.sum": 0.00148282,
+        "Context.StorageManager.sm_load_group_metadata.avg": 0.000494274,
+        "Context.StorageManager.sm_load_group_from_uri.sum": 0.00126782,
+        "Context.StorageManager.sm_load_group_from_uri.avg": 0.000422606,
+        "Context.StorageManager.sm_load_group_details.sum": 0.00127323,
+        "Context.StorageManager.sm_load_group_details.avg": 0.000424411,
+        "Context.StorageManager.group_open_for_reads.sum": 0.00127785,
+        "Context.StorageManager.group_open_for_reads.avg": 0.000425949
+      },
+      "counters": {
+        "Context.StorageManager.read_unfiltered_byte_num": 823,
+        "Context.StorageManager.read_group_size": 276,
+        "Context.StorageManager.read_array_meta_size": 547,
+        "Context.StorageManager.VFS.read_ops_num": 21,
+        "Context.StorageManager.VFS.read_byte_num": 1133,
+        "Context.StorageManager.VFS.ls_num": 9,
+        "Context.StorageManager.VFS.is_object_num": 1
+      }
+    },
+    {
+      "timers": {
+        "Context.StorageManager.sm_load_group_metadata.sum": 0.000887993,
+        "Context.StorageManager.sm_load_group_metadata.avg": 0.000221998,
+        "Context.StorageManager.sm_load_group_from_uri.sum": 0.0010998,
+        "Context.StorageManager.sm_load_group_from_uri.avg": 0.00027495,
+        "Context.StorageManager.sm_load_group_details.sum": 0.00110785,
+        "Context.StorageManager.sm_load_group_details.avg": 0.000276963,
+        "Context.StorageManager.sm_load_fragment_metadata.sum": 7.4282e-05,
+        "Context.StorageManager.sm_load_fragment_metadata.avg": 3.7141e-05,
+        "Context.StorageManager.sm_load_array_schemas_and_fragment_metadata.sum": 0.000755807,
+        "Context.StorageManager.sm_load_array_schemas_and_fragment_metadata.avg": 0.000377904,
+        "Context.StorageManager.sm_load_array_schema_from_uri.sum": 0.000521144,
+        "Context.StorageManager.sm_load_array_schema_from_uri.avg": 0.000260572,
+        "Context.StorageManager.sm_load_array_metadata.sum": 0.000442037,
+        "Context.StorageManager.sm_load_array_metadata.avg": 0.000221018,
+        "Context.StorageManager.sm_load_all_array_schemas.sum": 0.000659219,
+        "Context.StorageManager.sm_load_all_array_schemas.avg": 0.000329609,
+        "Context.StorageManager.group_open_for_reads.sum": 0.00111288,
+        "Context.StorageManager.group_open_for_reads.avg": 0.000278221,
+        "Context.StorageManager.array_open_read_load_schemas_and_fragment_meta.sum": 0.000758656,
+        "Context.StorageManager.array_open_read_load_schemas_and_fragment_meta.avg": 0.000379328,
+        "Context.StorageManager.array_open_read_load_directory.sum": 0.000196266,
+        "Context.StorageManager.array_open_read_load_directory.avg": 9.8133e-05,
+        "Context.StorageManager.array_open_READ.sum": 0.000966028,
+        "Context.StorageManager.array_open_READ.avg": 0.000483014,
+        "Context.StorageManager.VFS.ArrayDirectory.list_root_uris.sum": 3.8463e-05,
+        "Context.StorageManager.VFS.ArrayDirectory.list_root_uris.avg": 1.92315e-05,
+        "Context.StorageManager.VFS.ArrayDirectory.list_fragment_meta_uris.sum": 4.148e-06,
+        "Context.StorageManager.VFS.ArrayDirectory.list_fragment_meta_uris.avg": 2.074e-06,
+        "Context.StorageManager.VFS.ArrayDirectory.list_commit_uris.sum": 2.4261e-05,
+        "Context.StorageManager.VFS.ArrayDirectory.list_commit_uris.avg": 1.21305e-05,
+        "Context.StorageManager.VFS.ArrayDirectory.list_array_schema_uris.sum": 3.7333e-05,
+        "Context.StorageManager.VFS.ArrayDirectory.list_array_schema_uris.avg": 1.86665e-05,
+        "Context.StorageManager.VFS.ArrayDirectory.list_array_meta_uris.sum": 2.3701e-05,
+        "Context.StorageManager.VFS.ArrayDirectory.list_array_meta_uris.avg": 1.18505e-05
+      },
+      "counters": {
+        "Context.StorageManager.read_unfiltered_byte_num": 3065,
+        "Context.StorageManager.read_group_size": 301,
+        "Context.StorageManager.read_frag_meta_size": 2764,
+        "Context.StorageManager.read_array_schema_size": 1789,
+        "Context.StorageManager.read_array_meta_size": 975,
+        "Context.StorageManager.VFS.read_ops_num": 40,
+        "Context.StorageManager.VFS.read_byte_num": 5043,
+        "Context.StorageManager.VFS.ls_num": 22,
+        "Context.StorageManager.VFS.file_size_num": 2
+      }
+    }
+  ],
+  "somacore_version": "1.0.3",
+  "tiledbsoma_version": "1.2.7",
+  "host_context": {
+    "uname": [
+      "Linux",
+      "ip-172-31-60-28",
+      "5.19.0-1028-aws",
+      "#29~22.04.1-Ubuntu SMP Tue Jun 20 19:12:11 UTC 2023",
+      "x86_64"
+    ],
+    "total_virtual_mem_bytes": 66343776256,
+    "total_physical_mem_bytes": 66343776256,
+    "swap_mem_total_bytes": 0,
+    "swap_mem_used_bytes": 0,
+    "swap_mem_free_bytes": 0,
+    "swap_mem_pct_bytes": 0.0,
+    "swap_mem_sin_bytes": 0,
+    "swap_mem_sout_bytes": 0,
+    "cpu_count": 32,
+    "python_version": [
+      3,
+      10,
+      6,
+      "final",
+      0
+    ],
+    "get_git_revision_hash": "dab8813be1aba7079995f47b2caf0ab002e30fd8"
+  },
+  "user_time_sec": "600.72",
+  "system_time_sec": "141.39",
+  "pct_of_cpu": 303,
+  "elapsed_time_sec": "244.85",
+  "avg_shared_text_sz_kb": 0,
+  "avg_unshared_text_sz_kb": 0,
+  "avg_stack_sz_kb": 0,
+  "avg_total_sz_kb": 0,
+  "max_res_set_sz_kb": 63338564,
+  "avg_res_set_sz_kb": 0,
+  "major_page_faults": 908,
+  "minor_page_faults": 23975813,
+  "voluntary_context_switches": 3717443,
+  "involuntary_context_switches": 6247,
+  "swaps": 0,
+  "file_system_inputs": 21012240,
+  "file_system_outputs": 0,
+  "socket_messages_sent": 0,
+  "socket_messages_received": 0,
+  "signals_delivered": 0,
+  "page_size_bytes": 4096,
+  "exit_status": 0,
+  "custom_out": [
+    null,
+    null
+  ],
+  "command_key": "d11226eac402b08d41d605a4bb40b8c0"
+}
