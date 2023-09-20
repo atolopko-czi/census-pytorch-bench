@@ -1,0 +1,41 @@
+Testing environment:
+- c6i.8xlarge 32 vCPU, 64 GiB, no swap
+- Local census 2023-07-03 on EBS volume with 3000 IOPS, 500 MiB/s
+
+Test case (18M cells, ~50% of full census primary cells):
+- "--obs-value-filter tissue_general=='brain' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --use-lazy-fetch":
+  - "--soma-buffer-bytes 16777216":
+    - FAILED in all cases (with/without GC/tensors)
+  - "--soma-buffer-bytes 8388608":
+    - "--pytorch-debug-gc --pytorch-debug-empty-tensors":
+      - PASS
+      - 1926 sec
+      - max_res_set_sz_kb: 45446704
+    - "--pytorch-debug-gc":
+      - PASS
+      - 3145 sec
+      - max_res_set_sz_kb: 45087404
+    - no gc:
+      - FAILED
+  - "--soma-buffer-bytes 4194304":
+    - "--pytorch-debug-gc --pytorch-debug-empty-tensors":
+      - PASS
+      - 2200 sec
+      - max_res_set_sz_kb: 27440100
+  - "--pytorch-debug-gc":
+      - PASS
+      - 3430 sec
+      - max_res_set_sz_kb: 27908940
+  - no gc:
+    - FAILED
+
+Memory observations:
+- GC is (apparently) required for success.
+- With GC, memory stays constrained to an upper limit, though the multiple is large: required RAM is 5000-6000x the --soma-buffer-bytes value. So fairly small soma-buffer-bytes are required to keep under memory budget (host RAM size).
+- Tensor creation does not consume more memory (showing zero-copy is in effect) and is not causing a memory leak.
+
+Performance observations:
+- The tensor creation consumes ~40% of the overall processing (w/o eager fetch)
+- Larger --soma-buffer-bytes values increase speed, but doubling the value (4194304 -> 8388608) was only ~10% faster overall (because processing the SOMA-returned data is more expensive than the I/O)
+
+

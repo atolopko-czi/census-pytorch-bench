@@ -1,0 +1,133 @@
+{
+  "command": "python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='brain' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --soma-buffer-bytes 4194304 --use-lazy-fetch",
+  "timestamp": 1689883766.153369,
+  "stdout": "",
+  "stderr": "Initializing ExperimentDataPipe\nInitializing encoders\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=234692793, elapsed=0:00:06\nRetrieved SOMA batch totals: n_soma_batches=1, n_obs=116508, nnz=234692793, elapsed=0:00:06\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=581800380, elapsed=0:00:15\nRetrieved SOMA batch totals: n_soma_batches=2, n_obs=233016, nnz=816493173, elapsed=0:00:21\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=696531359, elapsed=0:00:17\nRetrieved SOMA batch totals: n_soma_batches=3, n_obs=349524, nnz=1513024532, elapsed=0:00:38\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=624512620, elapsed=0:00:15\nRetrieved SOMA batch totals: n_soma_batches=4, n_obs=466032, nnz=2137537152, elapsed=0:00:53\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=755100498, elapsed=0:00:20\nRetrieved SOMA batch totals: n_soma_batches=5, n_obs=582540, nnz=2892637650, elapsed=0:01:13\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=568038294, elapsed=0:00:12\nRetrieved SOMA batch totals: n_soma_batches=6, n_obs=699048, nnz=3460675944, elapsed=0:01:25\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=559534186, elapsed=0:00:11\nRetrieved SOMA batch totals: n_soma_batches=7, n_obs=815556, nnz=4020210130, elapsed=0:01:36\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=566805662, elapsed=0:00:13\nRetrieved SOMA batch totals: n_soma_batches=8, n_obs=932064, nnz=4587015792, elapsed=0:01:49\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=620838017, elapsed=0:00:15\nRetrieved SOMA batch totals: n_soma_batches=9, n_obs=1048572, nnz=5207853809, elapsed=0:02:04\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=554547132, elapsed=0:00:12\nRetrieved SOMA batch totals: n_soma_batches=10, n_obs=1165080, nnz=5762400941, elapsed=0:02:16\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=572705379, elapsed=0:00:11\nRetrieved SOMA batch totals: n_soma_batches=11, n_obs=1281588, nnz=6335106320, elapsed=0:02:27\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=705502316, elapsed=0:00:14\nRetrieved SOMA batch totals: n_soma_batches=12, n_obs=1398096, nnz=7040608636, elapsed=0:02:41\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=775388496, elapsed=0:00:17\nRetrieved SOMA batch totals: n_soma_batches=13, n_obs=1514604, nnz=7815997132, elapsed=0:02:58\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=793718523, elapsed=0:00:15\nRetrieved SOMA batch totals: n_soma_batches=14, n_obs=1631112, nnz=8609715655, elapsed=0:03:13\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=698046540, elapsed=0:00:14\nRetrieved SOMA batch totals: n_soma_batches=15, n_obs=1747620, nnz=9307762195, elapsed=0:03:27\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=636055995, elapsed=0:00:13\nRetrieved SOMA batch totals: n_soma_batches=16, n_obs=1864128, nnz=9943818190, elapsed=0:03:40\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=739646601, elapsed=0:00:16\nRetrieved SOMA batch totals: n_soma_batches=17, n_obs=1980636, nnz=10683464791, elapsed=0:03:56\nRetrieving next SOMA batch...\nRetrieved SOMA batch: n_soma_batches=1, n_obs=116508, nnz=820115157, elapsed=0:00:20\nRetrieved SOMA batch totals: n_soma_batches=18, n_obs=2097144, nnz=11503579948, elapsed=0:04:16\nRetrieving next SOMA batch...\nCommand terminated by signal 9\nCommand being timed: \"python run_pytorch.py --census-uri /mnt/scratch/census-2023-07-03 --obs-value-filter tissue_general=='brain' --obs-columns soma_joinid,dataset_id,cell_type_ontology_term_id --soma-buffer-bytes 4194304 --use-lazy-fetch\"\nUser time (seconds): 1249.82\nSystem time (seconds): 388.35\nPercent of CPU this job got: 275%\nElapsed (wall clock) time (seconds): 594.53\nAverage shared text size (kbytes): 0\nAverage unshared data size (kbytes): 0\nAverage stack size (kbytes): 0\nAverage total size (kbytes): 0\nMaximum resident set size (kbytes): 63113952\nAverage resident set size (kbytes): 0\nMajor (requiring I/O) page faults: 320\nMinor (reclaiming a frame) page faults: 118755363\nVoluntary context switches: 16953719\nInvoluntary context switches: 16158\nSwaps: 0\nFile system inputs: 34357152\nFile system outputs: 0\nSocket messages sent: 0\nSocket messages received: 0\nSignals delivered: 0\nPage size (bytes): 4096\nExit status: 0\n",
+  "tiledb_stats": [
+    {
+      "timers": {
+        "Context.StorageManager.sm_load_group_metadata.sum": 0.000852851,
+        "Context.StorageManager.sm_load_group_metadata.avg": 0.000284284,
+        "Context.StorageManager.sm_load_group_from_uri.sum": 0.00161998,
+        "Context.StorageManager.sm_load_group_from_uri.avg": 0.000539993,
+        "Context.StorageManager.sm_load_group_details.sum": 0.00162709,
+        "Context.StorageManager.sm_load_group_details.avg": 0.000542363,
+        "Context.StorageManager.group_open_for_reads.sum": 0.00163162,
+        "Context.StorageManager.group_open_for_reads.avg": 0.000543872
+      },
+      "counters": {
+        "Context.StorageManager.read_unfiltered_byte_num": 823,
+        "Context.StorageManager.read_group_size": 276,
+        "Context.StorageManager.read_array_meta_size": 547,
+        "Context.StorageManager.VFS.read_ops_num": 21,
+        "Context.StorageManager.VFS.read_byte_num": 1133,
+        "Context.StorageManager.VFS.ls_num": 9,
+        "Context.StorageManager.VFS.is_object_num": 1
+      }
+    },
+    {
+      "timers": {
+        "Context.StorageManager.sm_load_group_metadata.sum": 0.000605187,
+        "Context.StorageManager.sm_load_group_metadata.avg": 0.000151297,
+        "Context.StorageManager.sm_load_group_from_uri.sum": 0.000671484,
+        "Context.StorageManager.sm_load_group_from_uri.avg": 0.000167871,
+        "Context.StorageManager.sm_load_group_details.sum": 0.000679331,
+        "Context.StorageManager.sm_load_group_details.avg": 0.000169833,
+        "Context.StorageManager.sm_load_fragment_metadata.sum": 9.0855e-05,
+        "Context.StorageManager.sm_load_fragment_metadata.avg": 4.54275e-05,
+        "Context.StorageManager.sm_load_array_schemas_and_fragment_metadata.sum": 0.000479911,
+        "Context.StorageManager.sm_load_array_schemas_and_fragment_metadata.avg": 0.000239955,
+        "Context.StorageManager.sm_load_array_schema_from_uri.sum": 0.00034823,
+        "Context.StorageManager.sm_load_array_schema_from_uri.avg": 0.000174115,
+        "Context.StorageManager.sm_load_array_metadata.sum": 0.000275166,
+        "Context.StorageManager.sm_load_array_metadata.avg": 0.000137583,
+        "Context.StorageManager.sm_load_all_array_schemas.sum": 0.000362832,
+        "Context.StorageManager.sm_load_all_array_schemas.avg": 0.000181416,
+        "Context.StorageManager.group_open_for_reads.sum": 0.000685282,
+        "Context.StorageManager.group_open_for_reads.avg": 0.00017132,
+        "Context.StorageManager.array_open_read_load_schemas_and_fragment_meta.sum": 0.000483287,
+        "Context.StorageManager.array_open_read_load_schemas_and_fragment_meta.avg": 0.000241643,
+        "Context.StorageManager.array_open_read_load_directory.sum": 0.000260344,
+        "Context.StorageManager.array_open_read_load_directory.avg": 0.000130172,
+        "Context.StorageManager.array_open_READ.sum": 0.000757913,
+        "Context.StorageManager.array_open_READ.avg": 0.000378957,
+        "Context.StorageManager.VFS.ArrayDirectory.list_root_uris.sum": 0.000100348,
+        "Context.StorageManager.VFS.ArrayDirectory.list_root_uris.avg": 5.0174e-05,
+        "Context.StorageManager.VFS.ArrayDirectory.list_fragment_meta_uris.sum": 1.4136e-05,
+        "Context.StorageManager.VFS.ArrayDirectory.list_fragment_meta_uris.avg": 7.068e-06,
+        "Context.StorageManager.VFS.ArrayDirectory.list_commit_uris.sum": 5.8461e-05,
+        "Context.StorageManager.VFS.ArrayDirectory.list_commit_uris.avg": 2.92305e-05,
+        "Context.StorageManager.VFS.ArrayDirectory.list_array_schema_uris.sum": 3.9347e-05,
+        "Context.StorageManager.VFS.ArrayDirectory.list_array_schema_uris.avg": 1.96735e-05,
+        "Context.StorageManager.VFS.ArrayDirectory.list_array_meta_uris.sum": 5.4709e-05,
+        "Context.StorageManager.VFS.ArrayDirectory.list_array_meta_uris.avg": 2.73545e-05
+      },
+      "counters": {
+        "Context.StorageManager.read_unfiltered_byte_num": 3065,
+        "Context.StorageManager.read_group_size": 301,
+        "Context.StorageManager.read_frag_meta_size": 2764,
+        "Context.StorageManager.read_array_schema_size": 1789,
+        "Context.StorageManager.read_array_meta_size": 975,
+        "Context.StorageManager.VFS.read_ops_num": 40,
+        "Context.StorageManager.VFS.read_byte_num": 5043,
+        "Context.StorageManager.VFS.ls_num": 22,
+        "Context.StorageManager.VFS.file_size_num": 2
+      }
+    }
+  ],
+  "somacore_version": "1.0.3",
+  "tiledbsoma_version": "1.2.7",
+  "host_context": {
+    "uname": [
+      "Linux",
+      "ip-172-31-60-28",
+      "5.19.0-1028-aws",
+      "#29~22.04.1-Ubuntu SMP Tue Jun 20 19:12:11 UTC 2023",
+      "x86_64"
+    ],
+    "total_virtual_mem_bytes": 66343776256,
+    "total_physical_mem_bytes": 66343776256,
+    "swap_mem_total_bytes": 0,
+    "swap_mem_used_bytes": 0,
+    "swap_mem_free_bytes": 0,
+    "swap_mem_pct_bytes": 0.0,
+    "swap_mem_sin_bytes": 0,
+    "swap_mem_sout_bytes": 0,
+    "cpu_count": 32,
+    "python_version": [
+      3,
+      10,
+      6,
+      "final",
+      0
+    ],
+    "get_git_revision_hash": "dab8813be1aba7079995f47b2caf0ab002e30fd8"
+  },
+  "user_time_sec": "1249.82",
+  "system_time_sec": "388.35",
+  "pct_of_cpu": 275,
+  "elapsed_time_sec": "594.53",
+  "avg_shared_text_sz_kb": 0,
+  "avg_unshared_text_sz_kb": 0,
+  "avg_stack_sz_kb": 0,
+  "avg_total_sz_kb": 0,
+  "max_res_set_sz_kb": 63113952,
+  "avg_res_set_sz_kb": 0,
+  "major_page_faults": 320,
+  "minor_page_faults": 118755363,
+  "voluntary_context_switches": 16953719,
+  "involuntary_context_switches": 16158,
+  "swaps": 0,
+  "file_system_inputs": 34357152,
+  "file_system_outputs": 0,
+  "socket_messages_sent": 0,
+  "socket_messages_received": 0,
+  "signals_delivered": 0,
+  "page_size_bytes": 4096,
+  "exit_status": 0,
+  "custom_out": [
+    null,
+    null
+  ],
+  "command_key": "6e0c39438c3c1496a0e541094ee31a5e"
+}
