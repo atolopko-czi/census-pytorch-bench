@@ -26,8 +26,8 @@ torch.manual_seed(RANDOM_SEED)
 @click.option("--sparse-x/--dense-x", default=False, show_default=True)
 @click.option("--torch-batch-size", default=128)
 @click.option("--num-workers", default=0)
-@click.option("--soma-batch-read-size", type=int)
-@click.option("--shuffle-mode", type=str)
+@click.option("--soma-chunk-size", type=int)
+@click.option("--shuffle/--no-shuffle", is_flag=True, default=False)
 @click.option("--use-eager-fetch/--use-lazy-fetch", default=True, show_default=True)
 @click.option("--pytorch-debug-gc", is_flag=True)
 @click.option("--pytorch-debug-empty-tensors", is_flag=True)
@@ -42,8 +42,8 @@ def run_pytorch(census_uri,
                 sparse_x,
                 torch_batch_size,
                 num_workers,
-                soma_batch_read_size,
-                shuffle_mode,
+                soma_chunk_size,
+                shuffle,
                 use_eager_fetch,
                 pytorch_debug_gc,
                 pytorch_debug_empty_tensors,
@@ -73,8 +73,8 @@ def run_pytorch(census_uri,
         obs_column_names=obs_columns.split(","),
         batch_size=int(torch_batch_size),
         return_sparse_X=sparse_x,
-        soma_batch_read_size=soma_batch_read_size,
-        shuffle_mode=shuffle_mode,
+        soma_chunk_size=soma_chunk_size,
+        shuffle=shuffle,
         use_eager_fetch=use_eager_fetch
     )
 
